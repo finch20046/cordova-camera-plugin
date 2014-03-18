@@ -3,7 +3,7 @@
 var Functions = function() {
 };
 
-Functions.getPicture = function(value, success, fail) {
+Functions.getPicture = function(success, fail) {
   cordova.exec(success, fail, "CameraPlugin", "openCamera", []);
 };
 
