@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.marcello.cameraplugin"
+        version="0.1.0">
+
+    <name>CameraPlugin</name>
+    <description>Marcello CameraPlugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,plugin,camera</keywords>
+
+    <js-module src="www/plugin.js" name="CameraPlugin">
+        <clobbers target="CameraPlugin" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+
+            <feature name="CameraPlugin">
+
+                <param name="ios-package" value="CameraPlugin"/>
+                <param name="onload" value="true" />
+
+            </feature>
+
+        </config-file>
+
+        <header-file src="src/ios/CameraPlugin.h" />
+        <source-file src="src/ios/CameraPlugin.m" />
+
+    </platform>
+
+
+</plugin>
