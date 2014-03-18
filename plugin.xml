@@ -28,7 +28,10 @@
         </config-file>
 
         <header-file src="src/ios/CameraPlugin.h" />
+        <header-file src="src/ios/CustomCameraViewController.h" />
         <source-file src="src/ios/CameraPlugin.m" />
+        <source-file src="src/ios/CustomCameraViewController.m" />
+        <resource-file src="src/ios/CustomCameraViewController.xib" />
 
     </platform>
 
