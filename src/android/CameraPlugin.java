@@ -1,35 +1,20 @@
 package com.marcello.cameraplugin;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
-import android.widget.Toast;
-import android.content.Context;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.util.Log;
-import android.widget.Toast;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Bundle;
 import android.provider.MediaStore;
-import android.provider.MediaStore.Images;
 
 
 public class CameraPlugin extends CordovaPlugin {
 	
 	static int TAKE_PICTURE = 1;
-	private Intent intent;
 	private CallbackContext callbackContext;
 
 	@Override
@@ -37,12 +22,10 @@ public class CameraPlugin extends CordovaPlugin {
 		System.out.println("============>" + action);
 
 		if (action.equals("initPlugin")) {
-			String message = "initPlugin";
 			this.initPlugin(callbackContext);
 			return true;
 		}
 		if (action.equals("openCamera")) {
-			String message = "openCamera";
 			this.openCamera(callbackContext);
 			return true;
 		}
