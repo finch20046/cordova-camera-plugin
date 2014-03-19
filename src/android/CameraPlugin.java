@@ -1,4 +1,4 @@
-package com.scloby.ingenico;
+package com.marcello.cordovaplugin;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -17,7 +17,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.net.Uri;
 
-public class SclobyPlugin extends CordovaPlugin {
+public class CameraPlugin extends CordovaPlugin {
 
 	private final String INGENICO_PAKAGE = "com.ingenico.bancasella";
 	private final String INGENICO_SUB_PAKAGE = "com.ingenico.pos";
