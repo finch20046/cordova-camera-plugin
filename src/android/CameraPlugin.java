@@ -39,7 +39,7 @@ public class CameraPlugin extends CordovaPlugin {
 		}
 		if (action.equals("openCamera")) {
 			String message = "openCamera";
-			this.initPlugin(callbackContext);
+			this.openCamera(callbackContext);
 			return true;
 		}
 		return false;
@@ -56,6 +56,20 @@ public class CameraPlugin extends CordovaPlugin {
         this.cordova.getActivity().startActivityForResult(intent, 1);
 
 	}
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+
+        if (requestCode == TAKE_PICTURE && resultCode== RESULT_OK && intent != null){
+            // get bundle
+            Bundle extras = intent.getExtras();
+
+            // get bitmap
+            bitMap = (Bitmap) extras.get("data");
+            ivThumbnailPhoto.setImageBitmap(bitMap);
+
+        }
+    }
 
 	private void initPlugin(CallbackContext callbackContext) {
 
