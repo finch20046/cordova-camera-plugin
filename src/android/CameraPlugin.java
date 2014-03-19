@@ -1,4 +1,4 @@
-package com.marcello.cordovaplugin;
+package com.marcello.cameraplugin;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.net.Uri;
+import android.provider.MediaStore;
 
 public class CameraPlugin extends CordovaPlugin {
 
@@ -47,21 +48,16 @@ public class CameraPlugin extends CordovaPlugin {
 	private void openCamera(CallbackContext callbackContext) {
 	    this.paymentCallbackContext = callbackContext;
 
-        setContentView(R.layout.main);
-
         // create Intent to take a picture and return control to the calling application
+     // create intent with ACTION_IMAGE_CAPTURE action
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-
-        // start the image capture Intent
-        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+        // start camera activity
+        this.cordova.getActivity().startActivityForResult(intent, 1);
 
 	}
 
 	private void initPlugin(CallbackContext callbackContext) {
 
 	}
-
 }
