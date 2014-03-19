@@ -13,6 +13,24 @@
         <clobbers target="CameraPlugin" />
     </js-module>
 
+
+    <!-- android -->
+    <platform name="android">
+
+        <source-file src="src/android/CameraPlugin.java" target-dir="src/com/marcello/cameraplugin" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+
+            <feature name="CameraPlugin">
+
+                <param name="android-package" value="com.marcello.cameraplugin.CameraPlugin" onload="true" />
+
+            </feature>
+
+        </config-file>
+
+    </platform>
+
     <!-- ios -->
     <platform name="ios">
 
